@@ -30,7 +30,9 @@ const Chat = ({ location }) => {
     setName(name)
 
     socket.emit('join', { name, room }, (error) => {
+      console.log("trying to join")
       if(error) { 
+        console.log(error)
         setFlag(1);
         alert(error);
       }
